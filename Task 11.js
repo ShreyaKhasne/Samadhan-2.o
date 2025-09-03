@@ -17,12 +17,12 @@ let students = [
   { id: 3, name: "Saipratik", class: "8B" },
 ];
 
-// ✅ GET all students
+
 app.get("/api/students", (req, res) => {
   res.json(students);
 });
 
-// ✅ GET one student by ID
+
 app.get("/api/students/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const student = students.find((s) => s.id === id);
@@ -30,7 +30,7 @@ app.get("/api/students/:id", (req, res) => {
   res.json(student);
 });
 
-// ✅ POST (Add new student)
+
 app.post("/api/students", (req, res) => {
   const { name, class: studentClass } = req.body;
   if (!name || !studentClass) {
@@ -45,7 +45,7 @@ app.post("/api/students", (req, res) => {
   res.status(201).json(newStudent);
 });
 
-// ✅ PUT (Update student by ID)
+
 app.put("/api/students/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const { name, class: studentClass } = req.body;
@@ -64,7 +64,7 @@ app.put("/api/students/:id", (req, res) => {
   res.json(students[studentIndex]);
 });
 
-// ✅ DELETE student
+
 app.delete("/api/students/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const studentIndex = students.findIndex((s) => s.id === id);
@@ -75,7 +75,7 @@ app.delete("/api/students/:id", (req, res) => {
   res.json(removedStudent[0]);
 });
 
-// ✅ Start server
+
 app.listen(PORT, () => {
   console.log(`🚀 Student CRUD API running at http://localhost:${PORT}`);
 });
