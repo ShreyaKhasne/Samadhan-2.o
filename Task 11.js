@@ -1,6 +1,4 @@
-// server.js
-// Run: npm init -y && npm install express cors
-// Start: node server.js
+
 
 const express = require("express");
 const cors = require("cors");
@@ -8,9 +6,9 @@ const app = express();
 const PORT = 4000;
 
 app.use(cors());
-app.use(express.json()); // parse JSON body
+app.use(express.json()); 
 
-// In-memory student data (will reset when server restarts)
+
 let students = [
   { id: 1, name: "Utkarsh", class: "8A" },
   { id: 2, name: "Aarav", class: "8A" },
